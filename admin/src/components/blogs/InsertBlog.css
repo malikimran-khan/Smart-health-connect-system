@@ -1,0 +1,22 @@
+.insert-blog-container {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.form-input,
+.form-textarea,
+.form-input-file {
+  width: 100%;
+  padding: 0.625rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-input-file:focus {
+  border-color: #2563eb;
+}

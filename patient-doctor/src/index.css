@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+    :root {
+        --color-rich-black: #00072d;
+        --color-deep-primary: #051650;
+        --color-primary-blue: #0a2472;
+        --color-secondary-blue: #123499;
+        --color-accent: #5eaf73;
+        --color-text-main: #f8fafc;
+        --color-text-dim: #94a3b8;
+    }
+
+    body {
+        background-color: var(--color-rich-black);
+        color: var(--color-text-main);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    button,
+    a,
+    [role="button"],
+    [role="link"],
+    [role="menuitem"],
+    [role="tab"],
+    [role="treeitem"],
+    [role="option"],
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"] {
+        cursor: pointer;
+    }
+}
+
+@layer utilities {
+    .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-rich-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-deep-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-blue);
+}

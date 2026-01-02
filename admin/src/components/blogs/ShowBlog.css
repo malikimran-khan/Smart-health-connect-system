@@ -1,0 +1,47 @@
+/* src/components/ShowBlog.css */
+
+.blog-card-item {
+  /* Using Tailwind for rounded-xl, shadow-lg, transition, hover:scale-105 */
+  /* This class wraps the image and overlay */
+}
+
+.blog-card-image {
+  background-size: cover;      /* Make the background image cover the entire div */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat;/* Do not repeat the image */
+  height: 250px;               /* Fixed height for the image area to ensure consistent card size */
+  width: 100%;                 /* Take full width of parent */
+  position: relative;          /* Needed for the overlay positioning */
+  z-index: 0;                  /* Ensure image is behind overlay content */
+}
+
+.blog-card-overlay {
+  /* Using Tailwind for absolute, inset-0, bg-black, bg-opacity-60, flex, flex-col, justify-end, p-6 */
+  /* This overlay makes the text readable over the image */
+  z-index: 1; /* Ensure overlay is above the image */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+/* Hover effect: Show overlay when hovering over the whole card item */
+.blog-card-item:hover .blog-card-overlay {
+  opacity: 1; /* Make overlay visible on hover */
+}
+
+/* Optional: Subtle zoom effect on the image when hovering the card */
+.blog-card-item:hover .blog-card-image {
+  transform: scale(1.08); /* Slightly zoom the image */
+  transition: transform 0.4s ease-in-out; /* Smooth transition */
+}
+
+/* Ensure the image doesn't zoom out of bounds, due to overflow:hidden on .blog-card-item */
+.blog-card-item .blog-card-image {
+  transition: transform 0.4s ease-in-out; /* Add transition to initial state as well */
+}
+
+/* For better text readability over varying images */
+.blog-card-overlay h3,
+.blog-card-overlay a,
+.blog-card-overlay p {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Subtle shadow for text readability over light parts of image */
+}

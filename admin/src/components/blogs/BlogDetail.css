@@ -1,0 +1,25 @@
+/* src/components/BlogDetail.css */
+
+/* General styles for images embedded within the blog post */
+.blog-embedded-image-container {
+  display: flex;       /* Use flexbox to center the image */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically (if height constraints were there) */
+  margin-left: auto;   /* Center div if it has a max-width */
+  margin-right: auto;  /* Center div if it has a max-width */
+  max-width: 800px;    /* Optional: constrain image width slightly less than text column */
+                       /* Adjust this max-width as desired for your layout */
+}
+
+.blog-embedded-image-container img {
+  width: 100%; /* Ensure image fills its container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Important for images with various aspect ratios */
+}
+
+/* You can add more specific styling for captions if you uncomment them in JSX */
+/*
+.blog-embedded-image-container p {
+  font-style: italic;
+}
+*/
